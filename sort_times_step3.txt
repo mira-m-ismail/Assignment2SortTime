@@ -1,2 +1,3 @@
-Calling the function that uses sorted arrays results in a recursion error in the quicksort algorithm,
-meaning it keeps calling itself until maximum recursion was reached.
+Calling quick sort while passing sorted arrays results in a recursion error in the quick sort algorithm,
+meaning it keeps calling itself until maximum recursion was reached by Python. This can be due to the lack of
+a base case that can tell it to stop recursion (return nothing), if an array is already sorted.
