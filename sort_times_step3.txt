@@ -1,0 +1,2 @@
+Calling the function that uses sorted arrays results in a recursion error in the quicksort algorithm,
+meaning it keeps calling itself until maximum recursion was reached.
