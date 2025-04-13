@@ -1,3 +1,10 @@
+"""This Python program records the sort time taken for 8 unsorted arrays of different sizes,
+and compares sorting times of three different sorts (insertion, merge & quick.) Then, the same
+solrting algorithms are used & timed on sorted arrays, and a hybrid sort function is also created in order
+to efficiently deal with sorted arrays.
+
+Group: Mira, Salma, Misbah, Reem"""
+
 import time
 import random
 import plotter
@@ -8,16 +15,19 @@ SIZES = [200, 500, 800, 1100, 1400, 1700, 2000] # no. of random elements in arra
 
 
 def sort_function_timer(sort_function, an_array):
-    start = time.perf_counter()   # timer starts
-    sort_function(list(an_array))
-    end = time.perf_counter()     # timer ends
-    return (end - start)          # calculated time is returned/stored
+    start = time.perf_counter()     # timer starts
+    sort_function(list(an_array))   # passes the array to the passed sort function
+    end = time.perf_counter()       # timer ends
+    return (end - start)            # calculated time is returned/stored
 
 
 def random_array(size):
-    # a separate function that creates a Python list for each element of SIZES
-    element = random.randint(1, 9999)
-    return [element for i in range(size)]
+    
+    randomArray = []        # creates empty array
+    for i in range(size):
+        num = random.randint(1, 9999)
+        randomArray.append(num)
+    return randomArray
 
 
 def plot_sort_time_using_random_arrays(sort_function):
@@ -61,7 +71,7 @@ def main():
 
     plot_sort_time_using_sorted_z(insertion_sort)
     plot_sort_time_using_sorted_z(merge_sort)
-    #plot_sort_time_using_random_arrays(quick_sort)
+    #plot_sort_time_using_sorted_z(quick_sort)
     plot_sort_time_using_sorted_z(quick_insertion_sort)
 
 # for sorted arrays, quick insertion sort works relatively best.

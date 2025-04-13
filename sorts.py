@@ -1,4 +1,5 @@
 def merge_sort(arr):
+    
     if len(arr) > 1:
         mid = len(arr) // 2
 
@@ -79,6 +80,7 @@ def quick_sort(arr):
         return quick_sort(smaller) + equal + quick_sort(larger)
 
 
+
 def quick_insertion_sort(arr):
     def isSorted(arr):
             for i in range(len(arr) - 1):
@@ -87,13 +89,13 @@ def quick_insertion_sort(arr):
             return True
     
     if (len(arr)) <= 1:
-       return arr   # base case 1
+       return arr   # base case 1: do nothing
     elif len(arr) < 2:
-        return arr  # base case 2
-    elif len(arr) <= 10:
-        return insertion_sort(arr)  # base case 3: switches to insertion sort when array is short in length due to its efficiency
+        return arr  # base case 2: do nothing
+    elif len(arr) > 50:
+        insertion_sort(arr)  # base case 3: switches to insertion sort when reaching maximum recursion depth
     elif isSorted(arr) == True:
-        return arr  # base case 4: if array is already sorted
+        return arr  # base case 4: do nothing if array is already sorted
     else:
         pivot = arr[0] #choose first element as pivot
                                                             # pivot = arr[random.randrange(0,len(arr)-1)] #random index
